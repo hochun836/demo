@@ -1,0 +1,29 @@
+<div class="radio-group">
+  <span>圖表:</span>
+  <input type="radio" id="chartjs" name="chartjs" value="chartjs" [(ngModel)]="chartType" (change)="change();">
+  <label for="chartjs">Chart.js</label>
+  <input type="radio" id="highcharts" name="highcharts" value="highcharts" [(ngModel)]="chartType" (change)="change();">
+  <label for="highcharts">Highcharts</label>
+</div>
+
+<div class="option">
+  <ng-container *ngTemplateOutlet="template ? template : defaultTemplate"></ng-container>
+</div>
+
+<!-- Template -->
+
+<ng-template #defaultTemplate>
+  <div class="hint">請選擇圖表</div>
+</ng-template>
+
+<ng-template #chartjsTemplate>
+  <div>
+    <canvas #chartjsCanvas></canvas>
+  </div>
+</ng-template>
+
+<ng-template #highchartsTemplate>
+  <div>
+    <div #highchartsContainer></div>
+  </div>
+</ng-template>

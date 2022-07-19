@@ -1,0 +1,108 @@
+@import 'src/scss/shared';
+
+%field {
+
+  &.error {
+    border: 2px solid $warn-color;
+  }
+
+  &+.error small {
+    color: $warn-color;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a.link {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:active {
+    color: inherit;
+  }
+
+  &:link {
+    color: inherit;
+  }
+}
+
+input[type=text],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid $gray-color;
+
+  &:enabled:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    border: 2px solid $primary-color;
+  }
+}
+
+mat-icon.fa {
+  font-size: 1.7rem;
+}
+
+.flex-rest {
+  flex: 1 1;
+}
+
+.hide {
+  display: none;
+}
+
+.radio-group {
+
+  input[type=radio] {
+    margin-left: 1rem;
+  }
+
+  &+.option {
+    margin: 1rem 0;
+  }
+}
+
+.hint {
+  color: $gray-color;
+}
+
+.row {
+  display: block;
+  margin: 1.5%;
+
+  label {
+
+    &.required::before {
+      content: '* ';
+      color: red;
+    }
+  }
+
+  input[type=text] {
+    @extend %field;
+  }
+}
+
+.declaration {
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: $gray-color;
+}

@@ -1,0 +1,5 @@
+@import 'src/scss/shared';
+
+.app {
+  @include fill-parent-size();
+}

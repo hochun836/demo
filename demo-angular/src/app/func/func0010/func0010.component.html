@@ -1,0 +1,8 @@
+<div class="display">
+  itemList:&nbsp;
+  <div *ngFor="let item of itemList">{{ item }}&nbsp;</div>
+</div>
+
+<div class="grid" #grid>
+  <div class="item" *ngFor="let item of itemList">{{ item }}</div>
+</div>

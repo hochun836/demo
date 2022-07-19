@@ -1,0 +1,7 @@
+@import 'src/scss/util';
+@import 'src/scss/variable';
+
+@mixin fill-parent-size() {
+  width: 100%;
+  height: 100%;
+}

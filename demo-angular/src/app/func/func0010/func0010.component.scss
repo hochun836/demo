@@ -1,0 +1,20 @@
+.display {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 300px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcoral;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}

@@ -1,0 +1,16 @@
+@import 'src/scss/shared';
+
+.layout-header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.app-name {
+  margin: 0 0.5rem;
+}

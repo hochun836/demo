@@ -1,0 +1,14 @@
+@import 'src/scss/util';
+
+$primary-palette: mat-palette($mat-blue);
+$accent-palette: mat-palette($mat-teal);
+$warn-palette: mat-palette($mat-red);
+
+$primary-color: mat-color($primary-palette);
+$accent-color: mat-color($accent-palette);
+$warn-color: mat-color($warn-palette);
+$gray-color: #808080;
+
+$sm: 576px;
+$lg: 992px;
+$xl: 1280px;

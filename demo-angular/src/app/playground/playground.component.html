@@ -1,0 +1,31 @@
+<div class="layout-playground">
+
+  <mat-sidenav-container>
+
+    <mat-sidenav [mode]="snavMode" #snav [fixedInViewport]="true" [(opened)]="snavOpened">
+
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let x of funcList" [routerLink]="x.href" routerLinkActive="router-active"
+          (click)="clickFunc();">
+          <mat-icon fontSet="fontawesome" fontIcon="{{ x.icon }}"></mat-icon>
+          {{ x.name }}
+        </a>
+      </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+
+      <div class="header">
+        <app-header></app-header>
+      </div>
+
+      <div class="content flex-rest">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+</div>

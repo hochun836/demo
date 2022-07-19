@@ -1,0 +1,17 @@
+fieldset {
+  margin-bottom: 1rem;
+
+  label {
+    display: inline-block;
+    width: 70px;
+    margin-right: 1rem;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  input {
+    margin-right: 1rem;
+  }
+}
