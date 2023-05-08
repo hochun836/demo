@@ -1,0 +1,43 @@
+@import '@angular/material/theming';
+
+@mixin rwd($min-width: null, $max-width: null) {
+  @if ($min-width) and ($max-width) {
+    @media (min-width: $min-width) and (max-width: ($max-width - 1px)) {
+      @content;
+    }
+  }
+
+  @else if ($min-width) and (not $max-width) {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  }
+
+  @else if (not $min-width) and ($max-width) {
+    @media (max-width: ($max-width - 1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin ie11() {
+
+  @media screen and (-ms-high-contrast: active),
+  (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+@mixin cell($height, $border-color: black) {
+  display: inline-block;
+  vertical-align: top;
+  height: $height;
+  border: 1px solid $border-color;
+}
+
+// horizontal vertical center
+@mixin hv-center {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}

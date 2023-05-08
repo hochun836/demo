@@ -1,0 +1,34 @@
+@import 'src/scss/util';
+@import 'src/scss/variable';
+
+@mixin hover() {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $auxiliary-color;
+  }
+}
+
+@mixin text-hover($transition: null) {
+  cursor: pointer;
+  transition: color .2s;
+
+  @if ($transition) {
+    transition: color .2s, $transition;
+  }
+
+  &:hover {
+    color: $theme-text-secondary-color;
+  }
+}
+
+@mixin fade-out() {
+  display: none;
+  animation-name: fade-in-down;
+  animation-duration: 0.2s;
+}
+
+@mixin fill-parent-size() {
+  width: 100%;
+  height: 100%;
+}
