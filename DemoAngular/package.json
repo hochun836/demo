@@ -7,8 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "public": "ng serve --host=0.0.0.0",
-    "build-sit": "ng build --configuration=sit --outputPath=dist/sit --baseHref=/demo-angular/ && copyfiles .htaccess dist/sit",
-    "build-prd": "ng build --configuration=production --outputPath=dist/prd --baseHref=/demo-angular/ && copyfiles .htaccess dist/prd"
+    "build-sit": "ng build --configuration=sit --output-path=dist/sit --base-href=/demo-angular/ && copyfiles .htaccess dist/sit && node open-file-explorer dist/sit",
+    "build-prd": "ng build --configuration=production --output-path=dist/prd --base-href=/demo-angular/ && copyfiles .htaccess dist/prd && node open-file-explorer dist/prd"
   },
   "private": true,
   "dependencies": {

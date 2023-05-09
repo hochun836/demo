@@ -16,13 +16,13 @@ export enum ChartType {
 
 export class StringBuilder {
 
-  private list = [] as string[];
+  private strList = [] as string[];
 
   append(str: string): void {
-    this.list.push(str);
+    this.strList.push(str);
   }
 
-  toString(): string {
-    return this.list.join('');
+  toString(separator = ''): string {
+    return this.strList.join(separator);
   }
 }

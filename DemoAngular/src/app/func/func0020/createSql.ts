@@ -1,4 +1,3 @@
-import { CHANGE_LINE } from 'src/app/common/constant';
 import { AOA, DbType, StringBuilder } from 'src/app/common/scheme';
 import { isNotEmpty, removeByIndex } from 'src/app/common/util';
 
@@ -55,6 +54,9 @@ enum MysqlColumn {
   OnDelete,
   OnUpdate,
 }
+
+const SPACE = ' ';
+const CHANGE_LINE = '\n';
 
 export function createSql(rowList: AOA, dbType: DbType, model: any): string {
 
@@ -163,8 +165,7 @@ function createOneTab4Oracle(model: any, rowList: AOA): string {
     }
 
     if (isNotEmpty(defaultValue)) {
-      const value = dataType.toUpperCase().startsWith('VARCHAR2') || dataType.toUpperCase().startsWith('NVARCHAR2') ? `'${defaultValue}'` : defaultValue;
-      sql.append(`DEFAULT ${value}`);
+      sql.append(`DEFAULT ${defaultValue}`);
     }
 
     if (unique === 'Y') {
@@ -175,7 +176,7 @@ function createOneTab4Oracle(model: any, rowList: AOA): string {
       sql.append(',');
     }
 
-    sb.append(sql.toString() + CHANGE_LINE);
+    sb.append(sql.toString(SPACE) + CHANGE_LINE);
   });
 
   sb.append(');' + CHANGE_LINE);
@@ -276,7 +277,7 @@ function createOneTab4Mssql(model: any, rowList: AOA): string {
       sql.append(',');
     }
 
-    sb.append(sql.toString() + CHANGE_LINE);
+    sb.append(sql.toString(SPACE) + CHANGE_LINE);
   });
 
   // Primary Key
@@ -374,7 +375,7 @@ function createOneTab4Mysql(model: any, rowList: AOA): string {
 
     sql.append(',');
 
-    sb.append(sql.toString() + CHANGE_LINE);
+    sb.append(sql.toString(SPACE) + CHANGE_LINE);
   });
 
   // Primary Key
